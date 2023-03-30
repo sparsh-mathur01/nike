@@ -17,12 +17,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { ImageComponent, SizeChart } from "../components";
+import { allImages } from "../data/imagedata";
 
 interface Props {
   product?: {
     id: string;
     name: string;
-    img: string[];
+    img: { imgSrc: string; id: string }[];
     desc: string;
     colorqty: number;
     price: number;
@@ -33,7 +34,7 @@ const ProductDetails = ({
   product = {
     id: "1",
     name: "Nike Court Vision Low",
-    img: [""],
+    img: [allImages[0]],
     desc: "Men's basketball shoes",
     colorqty: 1,
     price: 199,
@@ -45,9 +46,9 @@ const ProductDetails = ({
 
   return (
     <Container sx={{ mt: 10 }}>
-      <Grid container>
+      <Grid container justifyContent={'space-between'} >
         <Grid item xs={7}>
-          <ImageComponent images={['']}/>
+          <ImageComponent images={allImages.slice(0, 6)} />
         </Grid>
         <Grid item xs={4}>
           <Stack>
