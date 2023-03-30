@@ -8,7 +8,7 @@ export const SizeChart = ({
   sizes = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
 }: Props) => {
   return (
-    <Stack border="1px solid red" rowGap={1}>
+    <Stack rowGap={1}>
       <Stack direction={"row"} justifyContent="space-between">
         <Typography>Select Size</Typography>
         <Typography
@@ -23,7 +23,11 @@ export const SizeChart = ({
         {sizes.map((size, index) => {
           return (
             <Grid item key={index} xs={4}>
-              <Button fullWidth variant="outlined">
+              <Button
+                fullWidth
+                variant="outlined"
+                sx={{ border: "1px solid black", color: "black", py: 1 }}
+              >
                 {"UK " + size}
               </Button>
             </Grid>

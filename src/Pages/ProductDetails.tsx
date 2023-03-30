@@ -16,7 +16,7 @@ import React, { useState } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { SizeChart } from "../components";
+import { ImageComponent, SizeChart } from "../components";
 
 interface Props {
   product?: {
@@ -47,9 +47,9 @@ const ProductDetails = ({
     <Container sx={{ mt: 10 }}>
       <Grid container>
         <Grid item xs={7}>
-          {/* <ImageComponent images={['']}/> */}
+          <ImageComponent images={['']}/>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Stack>
             <Typography fontSize="32px">{product.name}</Typography>
             <Typography>{product.desc}</Typography>
@@ -65,18 +65,29 @@ const ProductDetails = ({
               </Typography>
             </Stack>
             <Stack rowGap={2} my={7}>
-              <SizeChart/>
+              <SizeChart />
               <Button
                 fullWidth
                 variant="contained"
-                sx={{ backgroundColor: "black", py: 2, borderRadius: 8 }}
+                sx={{
+                  backgroundColor: "black",
+                  py: 2,
+                  borderRadius: 8,
+                  textTransform: "none",
+                }}
               >
                 Add to Bag
               </Button>
               <Button
                 fullWidth
                 variant="outlined"
-                sx={{ py: 2, borderRadius: 8 }}
+                sx={{
+                  textTransform: "none",
+                  py: 2,
+                  borderRadius: 8,
+                  border: "1px solid grey",
+                  color: "black",
+                }}
                 endIcon={<FavoriteIcon />}
               >
                 Favourite
