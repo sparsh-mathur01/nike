@@ -20,8 +20,8 @@ export const ImageComponent = ({ images }: Props) => {
                   onMouseEnter={() => setPreview(item)}
                   src={item.imgSrc}
                   alt={item.id}
-                  width="60px"
-                  height="60px"
+                  width="70px"
+                  height="70px"
                 />
               </Card>
             );
@@ -31,11 +31,10 @@ export const ImageComponent = ({ images }: Props) => {
       <Grid item xs={10}>
         <Box width={"100%"} height={"668px"}>
           <img
-            style={{ border: "1px solid green" }}
             src={previewImg.imgSrc}
             alt={previewImg.id}
             width="100%"
-            height="96%"
+            height="100%"
           />
         </Box>
       </Grid>

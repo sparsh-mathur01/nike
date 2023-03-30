@@ -46,7 +46,7 @@ const ProductDetails = ({
 
   return (
     <Container sx={{ mt: 10 }}>
-      <Grid container justifyContent={'space-between'} >
+      <Grid container justifyContent={"space-between"}>
         <Grid item xs={7}>
           <ImageComponent images={allImages.slice(0, 6)} />
         </Grid>
@@ -70,6 +70,7 @@ const ProductDetails = ({
               <Button
                 fullWidth
                 variant="contained"
+                onClick={() => alert("added to cart")}
                 sx={{
                   backgroundColor: "black",
                   py: 2,
@@ -82,6 +83,7 @@ const ProductDetails = ({
               <Button
                 fullWidth
                 variant="outlined"
+                onClick={() => alert("added to fovourites")}
                 sx={{
                   textTransform: "none",
                   py: 2,
@@ -149,7 +151,7 @@ const ProductDetails = ({
                 <Stack direction={"row"} justifyContent="space-between">
                   <Typography fontSize="20px">Reviews (0)</Typography>
                   <Stack direction={"row"} gap={1}>
-                    <Rating name="read-only" value={0} readOnly />
+                    <Rating name="read-only" value={2} readOnly />
 
                     <KeyboardArrowDownIcon
                       sx={{ cursor: "pointer" }}
@@ -160,7 +162,7 @@ const ProductDetails = ({
                 <Collapse in={reviewCollapse}>
                   <Stack rowGap={1}>
                     <Stack direction={"row"} alignItems="center" gap={2}>
-                      <Rating name="read-only" value={0} readOnly /> 0 stars
+                      <Rating name="read-only" value={2} readOnly /> 2 stars
                     </Stack>
                     <Typography>
                       Have your say. Be the first to review the Nike Court

@@ -1,12 +1,12 @@
 import { Box, Card, Stack, Typography } from "@mui/material";
 import React from "react";
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   product: {
     id: string;
     name: string;
-    img: string[];
+    img: { imgSrc: string; id: string };
     desc: string;
     colorqty: number;
     price: number;
@@ -14,12 +14,17 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
-  //   const history = useHistory();
+  const navigate = useNavigate();
   return (
-    <Card sx={{ p: 2 }} onClick={() => {}}>
+    <Card sx={{ boxShadow:'none', cursor:'pointer' }} onClick={() => navigate("/productDetails")}>
       <Stack>
-        <Box minWidth={"413px"} minHeight="413px" border="1px solid grey">
-          <img src={product.img[0]} alt="product" />
+        <Box width={"100%"} height="500px">
+          <img
+            src={product.img.imgSrc}
+            alt="product"
+            width="100%"
+            height="100%"
+          />
         </Box>
         <Typography color="#b96d47">Just In</Typography>
         <Typography>{product.name}</Typography>
